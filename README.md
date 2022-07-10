@@ -1,5 +1,13 @@
 # Employee-Tracker
 
+## Purpose
+
+## Built With
+
+## Website
+
+## Contribution
+
 ## User Story
 
 AS A business owner
