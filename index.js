@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const db = require("./config/connection");
+const db = require("./server/connection");
 const cTable = require("console.table");
 const { restoreDefaultPrompts } = require("inquirer");
 
