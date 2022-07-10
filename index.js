@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
-const db = require("./server/connection");
+const db = require("./config/connection");
 const cTable = require("console.table");
 const { restoreDefaultPrompts } = require("inquirer");
-
+// function for initial user input 
 const userChoice = async () => {
     const mainMenu = await inquirer.prompt({
         type: "list",
@@ -21,7 +21,7 @@ const userChoice = async () => {
     });
     return mainMenu.chooseAction;
 };
-
+// function for View All * options, 
 const viewAll = (userSelection) => {
     if (userSelection === "View All Departments") {
         var sql = "SELECT * FROM department";
@@ -33,8 +33,6 @@ const viewAll = (userSelection) => {
         var sql = "SELECT * FROM employee";
         console.log("View All Employees fires here");
     }
-    // move to switch
-    // OR use multiple IFs
     db.query(sql, (err, rows) => {
         if (err) {
             console.error(err);
@@ -43,30 +41,8 @@ const viewAll = (userSelection) => {
             console.table(rows);
         }
     });
-    // const abc = new Promise((resolve,reject) => {
-    //     db.query(sql, (err,rows) => {
-    //         if (err) {
-    //             console.error(err);
-    //         } else {
-    //             // let rowsOutput = new Promise((resolve, reject) => {
-    //             //     resolve(rows)
-    //             // })
-    //             resolve(rows)
-    //         }
-    //     })
-    // })
-    // abc.then(results => {
-    //     console.log("\n");
-    //     console.table(results);
-    //     console.log("results: " + results);
-    //     console.log("Rows has displayed");
-    //     // console.log("\n" + "Type any key to continue.")
-    //     userChoice();
-    //     // rowsOutput.then(displayOutput => {
-    //     // })
-    // })
 }
-
+// fucntion for adding a department
 const addDepartment = async () => {
     const departmentInfo = await inquirer.prompt({
         type: "input",
@@ -84,7 +60,7 @@ const addDepartment = async () => {
         }
     })
 }
-
+// function for adding a role to the database
 const addRole = async () => {
     const roleInfo = await inquirer.prompt([
         {
@@ -100,7 +76,6 @@ const addRole = async () => {
         {
             type: "number",
             name: "departmentID",
-            // could be updated
             message: "What is the ID for the department this role is listed under?"
         },
     ]);
@@ -119,7 +94,7 @@ const addRole = async () => {
         }
     });
 };
-
+// function for adding an employee to thew database
 const addEmployee = async () => {
     const employeeInfo = await inquirer.prompt([
         {
@@ -159,7 +134,7 @@ const addEmployee = async () => {
         }
     });
 };
-
+//  function for updating an employee
 const updateEmployee = async () => {
     const employeeUpdated = await inquirer.prompt([
         {
@@ -186,7 +161,7 @@ const updateEmployee = async () => {
         }
     });
 };
-
+// initialization function
 const init = async () => {
     let exit = false;
     while (exit === false) {
