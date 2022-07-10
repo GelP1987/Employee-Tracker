@@ -15,5 +15,6 @@ VALUES ("Assistant", 70000, 1),
 ("Shipping Supervisor", 75000, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Robert", "Collier", 6, 1),
-("James", "OBrien", 7, 1);
+VALUES ("Luke", "Skywalker", 1, NULL),
+("Bob", "Burgers", 1, 2),
+("Farish", "Whatever", 2, 1);

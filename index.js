@@ -47,6 +47,7 @@ const viewAll = (userSelection) => {
         if (err) {
             console.error(err);
         } else {
+            console.log("\n");
             console.table(rows);
             console.log("Press Up or Down Arrow to select and Enter to confirm!");
         }
@@ -64,6 +65,7 @@ const viewEmpViaMananger = async () => {
         if (err) {
             console.error(err);
         } else {
+            console.log("\n");
             console.table(result);
             console.log("Press Up or Down Arrow to select and Enter to confirm!");
         }
@@ -121,6 +123,7 @@ const addRole = async () => {
         if (err) {
             console.error(err);
         } else {
+            console.log("\n");
             console.table(result);
             console.log("Press Up or Down Arrow to select and Enter to confirm!");
         }
@@ -164,6 +167,7 @@ const addEmployee = async () => {
         if (err) {
             console.error(err);
         } else {
+            console.log("\n");
             console.table(result);
             console.log("Press Up or Down Arrow to select and Enter to confirm!");
         }
@@ -194,6 +198,7 @@ const updateEmployee = async () => {
         if (err) {
             console.error(err);
         } else {
+            console.log("\n");
             console.table(result);
             console.log("Press Up or Down Arrow to select and Enter to confirm!");
         }
@@ -223,6 +228,7 @@ const empManagerUpdate = async () => {
         if (err) {
             console.error(err);
         } else {
+            console.log("\n");
             console.table(result);
             console.log("Press Up or Down Arrow to select and Enter to confirm!");
         }

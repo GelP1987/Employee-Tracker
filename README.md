@@ -2,11 +2,19 @@
 
 ## Purpose
 
+Intuitive application run from a command line to modify employee tracking database.
+
 ## Built With
+
+SQL, MYSQL2 NPM, INQUIRER NPM, NODE.JS, JavaScript, Console Tables NPM
 
 ## Website
 
+https://github.com/GelP1987/Employee-Tracker
+
 ## Contribution
+
+Made with ❤️ Philip Gelin
 
 ## User Story
 
